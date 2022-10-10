@@ -1,0 +1,158 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5604,        150]
+NotebookOptionsPosition[      4309,        121]
+NotebookOutlinePosition[      4718,        137]
+CellTagsIndexPosition[      4675,        134]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EQ", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<C:\\\\Users\\\\glen\\\\Documents\\\\GitHub\\\\CIMtoMO-WL\\\\Examples\
+\\\\Bus-14\\\\ieee14_EQ.xml\>\"", ",", "\"\<XML\>\""}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8743153627271605`*^9, 3.874315412699727*^9}, 
+   3.8743172411099243`*^9, {3.874317346510183*^9, 3.8743173560197997`*^9}, {
+   3.8743174564106035`*^9, 3.874317457928235*^9}, 3.874317642285427*^9, 
+   3.8744019956535363`*^9},ExpressionUUID->"0360e006-7212-41b2-a557-\
+054943abfecc"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Lines", "=", 
+   RowBox[{"Cases", "[", 
+    RowBox[{"EQ", ",", 
+     RowBox[{"XMLElement", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<http://iec.ch/TC57/2013/CIM-schema-cim16#\>\"", ",", 
+         "\"\<ACLineSegment\>\""}], "}"}], ",", "_", ",", "_"}], "]"}], ",", 
+     "Infinity"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8743154451834946`*^9, 3.874315466630378*^9}, {
+  3.874316302901476*^9, 3.8743163044283504`*^9}, {3.874317476864107*^9, 
+  3.8743174911602554`*^9}, {3.874317601874572*^9, 3.874317610494686*^9}, {
+  3.8743997175976763`*^9, 3.874399746860791*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"0094a7ea-c863-4535-8966-c01f4541bbd1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", "Lines", "]"}]], "Input",
+ CellChangeTimes->{{3.8743154767037525`*^9, 3.8743154804244914`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"f91efdfe-fa5f-4b86-a894-ab46236b6b06"],
+
+Cell[BoxData["16"], "Output",
+ CellChangeTimes->{
+  3.874315482084079*^9, 3.8743163131003504`*^9, {3.87431746991422*^9, 
+   3.8743174831325846`*^9}, 3.8743176135114946`*^9, {3.8743997407791996`*^9, 
+   3.8743997531217833`*^9}, 3.8744017925961733`*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"0d778130-80e9-49ce-8317-63c70f858beb"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Buses", " ", "=", " ", 
+   RowBox[{"Cases", "[", 
+    RowBox[{"EQ", ",", 
+     RowBox[{"XMLElement", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<http://iec.ch/TC57/2013/CIM-schema-cim16#\>\"", ",", 
+         "\"\<BusbarSection\>\""}], "}"}], ",", "_", ",", "_"}], "]"}], ",", 
+     "Infinity"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8744017289298244`*^9, 3.8744017588236923`*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"e782ca57-a3dc-4f5d-ace1-89ecc1fd6e3f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", "Buses", "]"}]], "Input",
+ CellChangeTimes->{{3.874401773067119*^9, 3.874401777380789*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"9d5c7348-8cfe-48ce-b779-3218bbe323bd"],
+
+Cell[BoxData["14"], "Output",
+ CellChangeTimes->{3.87440179846292*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"0248c4ff-2d99-477f-a81c-5acdf09206fd"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ConformLoads", " ", "=", " ", 
+   RowBox[{"Cases", "[", 
+    RowBox[{"EQ", ",", 
+     RowBox[{"XMLElement", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<http://iec.ch/TC57/2013/CIM-schema-cim16#\>\"", ",", 
+         "\"\<ConformLoad\>\""}], "}"}], ",", "_", ",", "_"}], "]"}], ",", 
+     "Infinity"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8744018440192857`*^9, 3.874401874796173*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"f6c4dd1d-3049-4ff5-a837-8ff126465c58"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", "ConformLoads", "]"}]], "Input",
+ CellChangeTimes->{{3.8744018842541213`*^9, 3.8744018949904013`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"eb2546cd-8cf2-49eb-bc52-42975d05da19"],
+
+Cell[BoxData["11"], "Output",
+ CellChangeTimes->{3.8744019003073473`*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"6a62d74f-0d7c-477c-bf2d-18de5585c7e5"]
+}, Open  ]]
+},
+WindowSize->{814.5, 713.25},
+WindowMargins->{{Automatic, 22.5}, {-20.25, Automatic}},
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"db67bd88-2322-4443-acc5-0ea18b24d322"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 562, 12, 48, "Input",ExpressionUUID->"0360e006-7212-41b2-a557-054943abfecc"],
+Cell[1123, 34, 719, 16, 48, "Input",ExpressionUUID->"0094a7ea-c863-4535-8966-c01f4541bbd1"],
+Cell[CellGroupData[{
+Cell[1867, 54, 211, 3, 28, "Input",ExpressionUUID->"f91efdfe-fa5f-4b86-a894-ab46236b6b06"],
+Cell[2081, 59, 329, 5, 32, "Output",ExpressionUUID->"0d778130-80e9-49ce-8317-63c70f858beb"]
+}, Open  ]],
+Cell[2425, 67, 533, 13, 48, "Input",ExpressionUUID->"e782ca57-a3dc-4f5d-ace1-89ecc1fd6e3f"],
+Cell[CellGroupData[{
+Cell[2983, 84, 208, 3, 28, "Input",ExpressionUUID->"9d5c7348-8cfe-48ce-b779-3218bbe323bd"],
+Cell[3194, 89, 149, 2, 32, "Output",ExpressionUUID->"0248c4ff-2d99-477f-a81c-5acdf09206fd"]
+}, Open  ]],
+Cell[3358, 94, 536, 13, 67, "Input",ExpressionUUID->"f6c4dd1d-3049-4ff5-a837-8ff126465c58"],
+Cell[CellGroupData[{
+Cell[3919, 111, 219, 3, 28, "Input",ExpressionUUID->"eb2546cd-8cf2-49eb-bc52-42975d05da19"],
+Cell[4141, 116, 152, 2, 32, "Output",ExpressionUUID->"6a62d74f-0d7c-477c-bf2d-18de5585c7e5"]
+}, Open  ]]
+}
+]
+*)
+
